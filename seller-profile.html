@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Profile</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #fafafa;
+    }
+    .profile-header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+    .product-card img {
+      height: 250px;
+      object-fit: cover;
+    }
+    .heart {
+      cursor: pointer;
+      font-size: 20px;
+      color: #ff4d6d;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+  <!-- SELLER PROFILE HEADER -->
+  <div class="profile-header">
+    <img id="sellerImage" src="https://via.placeholder.com/150" class="profile-pic">
+
+    <div>
+      <h4 id="sellerName">Seller Name</h4>
+      <p id="sellerBio" class="text-muted mb-1">Seller bio</p>
+      <p id="sellerLocation">📍 Location</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- PRODUCTS GRID -->
+  <div class="row" id="productGrid"></div>
+
+</div>
+
+<script>
+/* ===========================
+   GET SELLER EMAIL FROM URL
+=========================== */
+const params = new URLSearchParams(window.location.search);
+const sellerEmail = params.get("email");
+
+/* ===========================
+   FETCH SELLER PRODUCTS
+=========================== */
+fetch(`http://localhost:5000/products/seller/${sellerEmail}`)
+  .then(res => res.json())
+  .then(products => {
+
+    // Seller info from first product
+    if (products.length > 0) {
+      document.getElementById("sellerName").innerText = products[0].email;
+      document.getElementById("sellerBio").innerText =
+        "Handcrafted products made with love 🤍";
+      document.getElementById("sellerLocation").innerText =
+        "📍 India";
+    }
+
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = "";
+
+    products.forEach(p => {
+      grid.innerHTML += `
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card product-card h-100">
+            <img src="${p.image || 'https://via.placeholder.com/300'}"
+                 class="card-img-top">
+
+            <div class="card-body">
+              <h6>${p.productName}</h6>
+              <p class="fw-bold">₹${p.price}</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <i class="bi bi-heart heart"></i>
+
+                <button class="btn btn-sm btn-dark"
+                        onclick='openProduct(${JSON.stringify(p)})'>
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  });
+
+/* ===========================
+   OPEN PRODUCT DETAILS
+=========================== */
+function openProduct(product) {
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "product-details.html";
+}
+</script>
+
+</body>
+</html>
