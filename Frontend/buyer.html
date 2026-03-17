@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handmade Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    /* HEADER */
+    .navbar-brand {
+      font-size: 1.4rem;
+      color: #0d6efd;
+    }
+
+    /* CAROUSEL */
+    .carousel-box {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 10px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-img {
+      height: 480px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .carousel-caption h5 {
+      color: #ffc107;
+    }
+
+    .carousel-caption p {
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    /* CATEGORY CARDS */
+    .category-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+
+    /* WHY CHOOSE US */
+    .why-card {
+      border: none;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Handmade Hub</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navBar">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="wishlist.html">Wishlist ❤️</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html">Cart 🛒</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= CAROUSEL ================= -->
+<div id="carouselExample" class="carousel slide carousel-box" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="images\carosal-pottery.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5> Pottery Products</h5>
+        <p>Beautiful handmade pottery shaped by skilled hands. Each piece is unique, blending art, tradition, and everyday functionality.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images\carosal-jewelery.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5>Handcrafted Jewellery</h5>
+        <p>Uniquely handcrafted jewellery made with love and detail. Designed to add elegance, charm, and a personal touch to every look.</p>
+      </div>
+    </div>
+     <div class="carousel-item">
+      <img src="images\carosal-furniture.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5>Crafted Furniture Products</h5>
+        <p>Bring festive warmth and timeless style to your home with the Rustic Artisan Cabinet Living Room and Bedroom</p>
+      </div>
+    </div>
+     <div class="carousel-item">
+      <img src="images\carosal-cloth.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5>Handmade Clothing Products</h5>
+        <p>Handmade clothing crafted with care,creativity and tradition.Each piece tells a story of skill,comfort and timeless style.</p>
+      </div>
+    </div>
+ <div class="carousel-item">
+      <img src="images\carosal-food.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5>Artisanl Food Products</h5>
+        <p>Handmade jams,pickles,spices,and sweets made with love and tradition for every foodie.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images\carosal-decor.jpg" class="d-block w-100 carousel-img">
+      <div class="carousel-caption">
+        <h5>Home Decor Products</h5>
+        <p>Unique handmade décor designed to add charm and comfort to your home.Decor that brings warmth to your home</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<div class="container text-center my-5">
+  <h4 class="fw-bold mb-3">Why Choose Us?</h4>
+  <p class="text-muted mb-4">
+    Handmade Hub connects local artisans directly with buyers,
+    ensuring authenticity, quality, and fair pricing.
+  </p>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm why-card">
+        <h6>100% Handmade</h6>
+        <p class="small text-muted">Crafted by skilled artisans</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm why-card">
+        <h6>Direct from Sellers</h6>
+        <p class="small text-muted">No middlemen involved</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm why-card">
+        <h6>Trusted Quality</h6>
+        <p class="small text-muted">Verified products & sellers</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CATEGORIES ================= -->
+<div id="categories" class="container my-5">
+  <h4 class="text-center fw-bold mb-4">Shop by Category</h4>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images/pottery.png" class="card-img-top">
+        <div class="card-body">
+          <h6>Pottery Products</h6>
+          <a href="http://127.0.0.1:5500/Frontend/pottery.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images/jewelery.jpg" class="card-img-top">
+        <div class="card-body">
+          <h6>Handcrafted Jewellery</h6>
+          <a href="http://127.0.0.1:5500/jewellery.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images/decor.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h6>Home Decor Products</h6>
+          <a href="http://127.0.0.1:5500/home-decor.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images\sweet-3.jpg" class="card-img-top">
+        <div class="card-body">
+          <h6>Artisanal Food Products</h6>
+          <a href="http://127.0.0.1:5500/food-products.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images/cloth.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h6>Handmade Clothing</h6>
+          <a href="http://127.0.0.1:5500/cloth.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card category-card shadow-sm text-center">
+        <img src="images/furniture.jpg" class="card-img-top">
+        <div class="card-body">
+          <h6>Crafted Furniture</h6>
+          <a href="http://127.0.0.1:5500/furniture.html" class="btn btn-primary btn-sm">Explore</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

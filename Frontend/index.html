@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+</head>
+<body>
+    <div class="login-card">
+        <h2>login</h2>
+        <form onsubmit="handleLogin(event)">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name" required>
+             <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+             <label>Password</label>
+            <input type="password" placeholder="Enter your password" required>
+            <div class="role-section">
+                <label>Select Role</label>
+                <div class="roles">
+                  <label>
+  <input type="radio" name="role" value="buyer" required> Buyer
+</label>
+
+<label>
+  <input type="radio" name="role" value="seller" required> Seller
+</label>  
+                </div>
+            </div>
+            <button type="=submit">Continue</button>
+            </div>
+        </form>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg,#f6d365,#da08);
+            }
+            .login-card {
+                background: #fff;
+                padding: 30px;
+                border-radius:12px;
+                width: 320px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            }
+            .login-card h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            label {
+                display: block;
+                margin-top: 15px;
+                font-weight: bold;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+            }
+            .role {
+                margin-top: 5px;
+            }
+            .role input{
+                margin-right: 5px;
+            }
+            button{
+                width: 100%;
+                margin-top: 20px;
+                padding: 10px;
+                border: none;
+                border-radius: 8px;
+                background: #f57c00;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            button:hover{
+                background: #ef6c00;
+            }
+            
+        </style>
+        <script>
+            function handleLogin(event) {
+                event.preventDefault();
+                const roleInput = document.querySelector('input[name="role"]:checked');
+
+    if (!roleInput) {
+        alert("Please select a role");
+        return;
+    }
+
+    const role = roleInput.value;
+
+    if (role === "seller") {
+        window.location.href = "seller.html";
+    } else {
+        window.location.href = "buyer.html";
+    }
+} 
+            
+        </script>
+</body>
+</html>
